@@ -119,4 +119,43 @@ public class Order {
     public void setProcessed(boolean processed) {
         this.processed = processed;
     }
+
+
+    /**
+     * Létrehoz egy új rendelést a megadott vásárló kosara alapján.
+     *
+     * @param customer A vásárló, akinek a kosara alapján a rendelés készül
+     * @return Az új rendelés objektum
+     */
+    public static Order createOrderFromCart(Customer customer) {
+        if (customer == null || customer.getCart().isEmpty()) {
+            System.out.println("A kosár üres, nem hozható létre rendelés.");
+            return null;
+        }
+
+        ArrayList<Product> productsInOrder = new ArrayList<>(customer.getCart());
+        double total = 0;
+
+        for (Product product : productsInOrder) {
+            total += product.getPrice();
+            product.decreaseStock(1); // minden termékből 1 db-ot rendelünk
+        }
+
+        Order order = new Order(
+                "ORD-" + System.currentTimeMillis(),
+                customer,
+                productsInOrder,
+                total,
+                new java.util.Date(),
+                false
+        );
+
+        customer.getOrders().add(order);
+        customer.getCart().clear();
+
+        System.out.println("Rendelés sikeresen létrehozva. Összeg: " + total + " Ft");
+
+        return order;
+    }
+
 }
