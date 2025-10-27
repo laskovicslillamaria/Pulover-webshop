@@ -132,15 +132,12 @@ public class Order {
             System.out.println("A kosár üres, nem hozható létre rendelés.");
             return null;
         }
-
         ArrayList<Product> productsInOrder = new ArrayList<>(customer.getCart());
         double total = 0;
-
         for (Product product : productsInOrder) {
             total += product.getPrice();
             product.decreaseStock(1); // minden termékből 1 db-ot rendelünk
         }
-
         Order order = new Order(
                 "ORD-" + System.currentTimeMillis(),
                 customer,
@@ -149,7 +146,6 @@ public class Order {
                 new java.util.Date(),
                 false
         );
-
         customer.getOrders().add(order);
         customer.getCart().clear();
 
