@@ -1,4 +1,4 @@
-package hu.pulcsis.shop.controller;
+package hu.pulcsis.shop.Controller;
 
 import hu.pulcsis.shop.model.CartItem;
 import hu.pulcsis.shop.model.Product;
