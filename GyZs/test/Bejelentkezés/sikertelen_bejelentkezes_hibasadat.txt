@@ -1,0 +1,11 @@
+test('Sikertelen bejelentkezés helytelen jelszóval', async ({ page }) => {
+  await page.goto('https://your-app.com/login');
+
+  await page.fill('#username', 'validUser');
+  await page.fill('#password', 'RosszJelszo');
+  await page.click('button[type="submit"]');
+
+  const error = page.locator('.error-message');
+  await expect(error).toBeVisible();
+  await expect(error).toContainText('Helytelen felhasználónév vagy jelszó');
+});
