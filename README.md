@@ -1,7 +1,7 @@
 # Pulover-webshop
 # Pulóver webshop
 ## Mire jó a pulóver webshop?
-####Egy online webshop, ahol különböző stílusú pulóvereket lehet megtekinteni és megvásárolni. A cél egy letisztult, felhasználóbarát felület biztosítása, ahol a felhasználók gyorsan megtalálhatják a számukra megfelelő terméket.
+#### Egy online webshop, ahol különböző stílusú pulóvereket lehet megtekinteni és megvásárolni. A cél egy letisztult, felhasználóbarát felület biztosítása, ahol a felhasználók gyorsan megtalálhatják a számukra megfelelő terméket.
 
 ## Előfeltételek, követelmények:
 #### Az webshop használatához Edge, Chrome, Firefox böngészők szükségesek
